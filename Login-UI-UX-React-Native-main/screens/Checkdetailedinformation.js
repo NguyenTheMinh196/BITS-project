@@ -9,7 +9,7 @@ import { withTheme } from 'styled-components';
 import { backgroundColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 
 
-function Checkdatabase() {
+function Checkdetailedinformation() {
     const navigation = useNavigation();
   return (
     // body
@@ -28,95 +28,82 @@ function Checkdatabase() {
         <View style = {styles.return_container}>
           <Image style = {styles.back} source ={require('../assets/Checkdatabase/BackArrow.png')}></Image>
         </View>
-        {/* category */}
-        <View>
-          <Text style = {styles.type}>Student</Text>
+        {/* avatar */}
+        <View style = {styles.avatar}>
+          <Image style = {styles.ava_frame} source ={require('../assets/Checkdetailinformation/avatar.png')}></Image>
+        </View>
+        {/* name */}
+        <View style = {styles.name}>
+          <Text style = {styles.text}>Nguyen The Minh</Text>
+        </View>
+        {/* detailed information */}
+        <View style = {styles.detail_info_container}>
+          <View style = {styles.detail_info_section}>
+            <View style = {styles.detail_info_box}>
+              <Text style = {styles.text}>Student's ID</Text>
+            </View>
+            <View style = {styles.detail_info_box}>
+              <Text style = {styles.text}>3878434</Text>
+            </View>
+          </View>
+          <View style = {styles.detail_info_section}>
+            <View style = {styles.detail_info_box}>
+              <Text style = {styles.text}>Campus</Text>
+            </View>
+            <View style = {styles.detail_info_box}>
+              <Text style = {styles.text}>Sai Gon Campus</Text>
+            </View>
+          </View>
+          <View style = {styles.detail_info_section}>
+            <View style = {styles.detail_info_box}>
+              <Text style = {styles.text}>Vaccine status</Text>
+            </View>
+            <View style = {styles.detail_info_box}>
+              <Text style = {styles.text}>2 doses </Text>
+              <Text style = {styles.text}>(Pfizer)</Text>
+              <Text style = {styles.text}>(Pfizer)</Text>
+            </View>
+          </View>
+          <View style = {styles.detail_info_section}>
+            <View style = {styles.detail_info_box}>
+              <Text style = {styles.text}>Recover status</Text>
+            </View>
+            <View style = {styles.detail_info_box}>
+              <Text style = {styles.text}>Not affected</Text>
+            </View>
+          </View>
+          <View style = {styles.detail_info_section}>
+            <View style = {styles.detail_info_box}>
+              <Text style = {styles.text}>Date of birth</Text>
+            </View>
+            <View style = {styles.detail_info_box}>
+              <Text style = {styles.text}>19/06/2002</Text>
+            </View>
+          </View>
+          <View style = {styles.detail_info_section}>
+            <View style = {styles.detail_info_box}>
+              <Text style = {styles.text}>Gender</Text>
+            </View>
+            <View style = {styles.detail_info_box}>
+              <Text style = {styles.text}>Male</Text>
+            </View>
+          </View>
+          <View style = {styles.detail_info_section}>
+            <View style = {styles.detail_info_box}>
+              <Text style = {styles.text}>Description</Text>
+            </View>
+            <View style = {styles.detail_info_box}>
+              <Text style = {styles.text}>Short hair, have glasses</Text>
+            </View>
+          </View>
+          <View style={[styles.detail_info_section , styles.middle]}>
+            <Image style = {styles.ava_frame} source ={require('../assets/Checkdetailinformation/check.png')}></Image>
+          </View>
         </View>
         {/* search */}
-        <View style = {styles.search_container}>
-          <View style={[styles.search, styles.container]}>
-            <Image style = {styles.search_icon} source ={require('../assets/Checkdatabase/Search.png')}></Image>
-            <Text style = {styles.search_letter}>Search</Text>
-          </View>
-        </View>
         {/* category selection */}
-        <View style = {styles.category}>
-          <View style = {[styles.category_box, {backgroundColor: '#46FA63'}]}>
-            <Text>Pass</Text>
-          </View>
-          <View style = {[styles.category_box, {backgroundColor: '#FF5A5A'}]}>
-            <Text>Fail</Text>
-          </View>
-          <View style = {[styles.category_box, {backgroundColor: '#46D9FA'}]}>
-            <Text>All</Text>
-          </View>
-        </View>
-        {/* list */}
-        <View style = {styles.list}>
-          <View style = {styles.list_header_section}>
-            <Text style = {styles.list_header}>
-              A
-            </Text>
-          </View>
-          <View style = {styles.list_content}>
-            <Text style = {styles.student_identity}>
-              Huynh Van Anh
-            </Text>
-            <Text style = {styles.student_identity}>
-              Nguyen Viet Anh
-            </Text>
-            <Text style = {styles.student_identity}>
-              Nguyen Duc Anh
-            </Text>
-            <Text style = {styles.student_identity}>
-              Phan Duc Anh
-            </Text>
-          </View>
-          <View style = {styles.list_header_section}>
-            <Text style = {styles.list_header}>
-              B
-            </Text>
-          </View>
-          <View style = {styles.list_content}>
-            <Text style = {styles.student_identity}>
-              Nguyen Duc Bao
-            </Text>
-            <Text style = {styles.student_identity}>
-              Pham Duc Binh
-            </Text>
-            <Text style = {styles.student_identity}>
-              Pham Minh Binh
-            </Text>
-          </View>
-          <View style = {styles.list_header_section}>
-            <Text style = {styles.list_header}>
-              C
-            </Text>
-          </View>
-          <View style = {styles.list_content}>
-            <Text style = {styles.student_identity}>
-              Nguyen Chi Cong
-            </Text>
-            <Text style = {styles.student_identity}>
-              Pham Duc Cong
-            </Text>
-          </View>
-        </View>
       </View>
       {/* search by section */}
-      <View style = {styles.search_by_container}>
-        <Text style = {styles.search_text}>
-          Search by: 
-        </Text>
-        <View style = {styles.search_by_category_container}>
-          <View style = {styles.search_by_category}>
-            <Text> Student's name</Text>
-          </View>
-          <View style = {styles.search_by_category}>
-            <Text> Student's id</Text>
-          </View>
-        </View>
-      </View>
       <StatusBar style="auto" />
     </SafeAreaView>
   );
@@ -126,7 +113,7 @@ export default () => {
   return (
     <NativeBaseProvider>
      
-        <Checkdatabase />
+        <Checkdetailedinformation />
       
     </NativeBaseProvider>
   )
@@ -173,11 +160,7 @@ const styles = StyleSheet.create({
     width: 25,
     height: 25,
   },
-  type: {
-    marginTop: 20,
-    width: "100%",
-    textAlign: 'center',
-  },
+
   search_container: {
     backgroundColor: "#DEDEDE",
     justifyContent: 'center',
@@ -257,5 +240,44 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     padding: 5,
     alignItems: 'center',
+  },
+  avatar: {
+    marginTop: 20,
+    width: "100%",
+    textAlign: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 10,
+  },
+  ava_frame: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+  },
+  name: {
+    textAlign: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  text: {
+    fontSize: 18,
+  },
+  detail_info_container: {
+    margin: 20,
+    borderWidth: 2,
+    flexDirection: "column",
+    padding: 10,
+  },
+  detail_info_section: {
+    flexDirection: "row",
+    width: "100%",
+    marginBottom: 20,
+  },
+  detail_info_box: {
+    width: "50%",
+    textAlign: 'center',
+    justifyContent: 'center',
+     alignItems: 'center',
   },
 });
