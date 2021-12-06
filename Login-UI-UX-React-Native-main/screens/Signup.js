@@ -1,14 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { Input, NativeBaseProvider, Button, Icon, Box, Image, AspectRatio } from 'native-base';
 import { FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { alignContent, flex, flexDirection, width } from 'styled-system';
-
+import { Formik } from 'formik';
 
 function Signup() {
-    const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View style={styles.Middle}>
@@ -19,11 +18,20 @@ function Signup() {
         <Text style={styles.UnderLoginText} >Create an account to continue!</Text>
       </View>
 
+    <Formik
+     initialValues={{userName:'', email: '', password: '',  confirmPassword: '' }}
+     onSubmit={values => console.log(values)}
+   >
+     {({ handleChange, handleBlur, handleSubmit, values }) => (
+       <View>
+       
       {/* Username or Email Input Field */}
       <View style={styles.buttonStyle}>
-        
         <View style={styles.emailInput}>
           <Input
+            onChangeText={handleChange('userName')}
+            onBlur={handleBlur('userName')}
+            value={values.userName}
             variant="outline"
             placeholder="Username"
             _light={{
@@ -32,16 +40,17 @@ function Signup() {
             _dark={{
               placeholderTextColor: "blueGray.50",
             }}
-
           />
         </View>
       </View>
 
       {/* Username or Email Input Field */}
-      <View style={styles.buttonStyleX}>
-        
+      <View style={styles.buttonStyleX}>     
         <View style={styles.emailInput}>
           <Input
+            onChangeText={handleChange('email')}
+            onBlur={handleBlur('email')}
+            value={values.email}
             variant="outline"
             placeholder="Email"
             _light={{
@@ -50,34 +59,17 @@ function Signup() {
             _dark={{
               placeholderTextColor: "blueGray.50",
             }}
-
           />
         </View>
       </View>
 
-      {/* Password Input Field */}
+    {/* Password Input Field */}
       <View style={styles.buttonStyleX}>
-        
         <View style={styles.emailInput}>
           <Input
-            variant="outline"
-            secureTextEntry={true}
-            placeholder="Password"
-            _light={{
-              placeholderTextColor: "blueGray.400",
-            }}
-            _dark={{
-              placeholderTextColor: "blueGray.50",
-            }}
-          />
-        </View>
-      </View>
-
-      {/* Password Input Field */}
-      <View style={styles.buttonStyleX}>
-        
-        <View style={styles.emailInput}>
-          <Input
+            onChangeText={handleChange('confirmPassword')}
+            onBlur={handleBlur('confirmPassword')}
+            value={values.confirmPassword}
             variant="outline"
             secureTextEntry={true}
             placeholder="Confirm Password"
@@ -91,12 +83,37 @@ function Signup() {
         </View>
       </View>
 
-      {/* Button */}
-      <View style={styles.buttonLoginStyle}>
-        <Button style={styles.buttonDesign}>
-            REGISTER NOW
-        </Button>
+      {/* Password Input Field */}
+      <View style={styles.buttonStyleX}>
+        <View style={styles.emailInput}>
+          <Input
+            onChangeText={handleChange('password')}
+            onBlur={handleBlur('password')}
+            value={values.password}
+            variant="outline"
+            secureTextEntry={true}
+            placeholder="Password"
+            _light={{
+              placeholderTextColor: "blueGray.400",
+            }}
+            _dark={{
+              placeholderTextColor: "blueGray.50",
+            }}
+          />
+        </View>
       </View>
+
+      {/* Button */}
+        <View style={styles.buttonLoginStyle}>
+          <Button style={styles.buttonDesign} onPress= {handleSubmit}>
+              REGISTER NOW
+          </Button>
+        </View>
+
+       </View>
+     )}
+   </Formik>
+
       <View style={styles.text2}>
         <Text>Already have account? </Text>
         <TouchableOpacity onPress={() => navigation.navigate("Login")} ><Text style={styles.signupText}> Login </Text></TouchableOpacity>

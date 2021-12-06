@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { Input, NativeBaseProvider, Button, Icon, Box, Image, AspectRatio } from 'native-base';
+import { Input, NativeBaseProvider, Button, Icon, Box, Image, AspectRatio, Center } from 'native-base';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { alignContent, flex, flexDirection, paddingLeft, style, width } from 'styled-system';
@@ -12,9 +12,9 @@ function Welcome() {
   return (
       
     <View style={styles.container}>
-      <Image style = {styles.oval} source={require('../assets/Welcome/Oval.png')} /> 
-      <Image style = {styles.oval2} source={require('../assets/Welcome/Oval-2.png')} />
-      <Image style = {styles.logo} source={require('../assets/Welcome/logo.png')} />  
+      <Image style = {styles.oval} source={require('../assets/Welcome/Oval.png')} alt="Picture of the author"/> 
+      <Image style = {styles.oval2} source={require('../assets/Welcome/Oval-2.png')}  alt="Picture of the author"/>
+      <Image style = {styles.logo} source={require('../assets/Welcome/logo.png')} alt="Picture of the author"/>  
       <View style={styles.Middle}>
         <Text style={styles.LoginText}>Welcome to Vaccheck!</Text>
       </View>
@@ -64,16 +64,17 @@ const styles = StyleSheet.create({
     justifyContent:'center',
   },
   text2:{
-    flexDirection:'row',
+    flexDirection:'column',
     justifyContent:'center',
     paddingTop:5,
     marginLeft: 30,
     marginRight: 30,
-    textAlign: 'center'
+    alignItems: 'center',
     },
   oval:{
     position:'relative',
-    left:87
+    left: '40%',
+    width: '70%',
 },
 oval2:{
     position:'absolute',
