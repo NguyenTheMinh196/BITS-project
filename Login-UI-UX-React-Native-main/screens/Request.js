@@ -41,7 +41,7 @@ function Request() {
         <View style = {styles.text1}>
              <Text style = {styles.textID}>Request id: VC9007488</Text>
         </View> 
-        <Button style={styles.buttonDesign} onPress={() => navigation.navigate("Signup")} >
+        <Button style={styles.buttonDesign} onPress={() => navigation.navigate("RequestDetailPage")} >
               VIEW DETAIL
         </Button>
       </View>
@@ -55,7 +55,7 @@ function Request() {
         <View style = {styles.text1}>
              <Text style = {styles.textID}>Request id: VC9007488</Text>
         </View> 
-        <Button style={styles.buttonDesign} onPress={() => navigation.navigate("Signup")} >
+        <Button style={styles.buttonDesign} onPress={() => navigation.navigate("RequestDetailPage")} >
               VIEW DETAIL
         </Button>
       </View>
@@ -69,7 +69,7 @@ function Request() {
         <View style = {styles.text1}>
              <Text style = {styles.textID}>Request id: VC9007488</Text>
         </View> 
-        <Button style={styles.buttonDesign} onPress={() => navigation.navigate("Signup")} >
+        <Button style={styles.buttonDesign} onPress={() => navigation.navigate("RequestDetailPage")} >
               VIEW DETAIL
         </Button>
       </View>

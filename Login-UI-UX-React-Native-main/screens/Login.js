@@ -57,7 +57,7 @@ function Login() {
 
       {/* Button */}
       <View style={styles.buttonLoginStyle}>
-      <Button style={styles.buttonDesign} onPress={() => navigation.navigate("Signup")} >
+      <Button style={styles.buttonDesign} onPress={() => navigation.navigate("Homepage")} >
             LOGIN
         </Button>
       </View>

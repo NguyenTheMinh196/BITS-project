@@ -8,6 +8,7 @@ import { alignContent, flex, flexDirection, width } from 'styled-system';
 import { Formik } from 'formik';
 
 function Signup() {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View style={styles.Middle}>
@@ -105,7 +106,7 @@ function Signup() {
 
       {/* Button */}
         <View style={styles.buttonLoginStyle}>
-          <Button style={styles.buttonDesign} onPress= {handleSubmit}>
+          <Button style={styles.buttonDesign}  onPress={() => navigation.navigate("Login")}>
               REGISTER NOW
           </Button>
         </View>
@@ -116,7 +117,7 @@ function Signup() {
 
       <View style={styles.text2}>
         <Text>Already have account? </Text>
-        <TouchableOpacity onPress={() => navigation.navigate("Login")} ><Text style={styles.signupText}> Login </Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("Login")} ><Text style={styles.signupText}> Log in</Text></TouchableOpacity>
       </View>
 
       <StatusBar style="auto" />
